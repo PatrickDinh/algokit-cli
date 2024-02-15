@@ -3,9 +3,12 @@ description: "An action to setup Poetry"
 runs:
   using: "composite"
   steps:
+    # A workaround for pipx isn't installed on M1 runner.
+    # We should remove it after this issue is resolved.
+    # https://github.com/actions/runner-images/issues/9256
     - if: ${{ runner.os == 'macOS' && runner.arch == 'ARM64' }}
       run: |
-        pip install --user poetry
+        pip install poetry
       shell: bash
 
     - if: ${{ runner.os != 'macOS' || runner.arch != 'ARM64' }}
