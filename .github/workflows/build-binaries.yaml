@@ -67,10 +67,6 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -s -k actions macos-build.keychain
           echo "key signed"
 
-          # Verify keychain things
-          security find-identity -v macos-build.keychain | grep "$APPLE_TEAM_ID" | grep "Developer ID Application"
-          security find-identity -v macos-build.keychain | grep "$APPLE_TEAM_ID" | grep "Developer ID Installer"
-
       - name: Build & test binary
         uses: ./.github/actions/build-binaries
         with:
