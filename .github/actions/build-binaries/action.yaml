@@ -33,7 +33,6 @@ runs:
       shell: bash
 
     - name: Notarize
-      if: runner.os == 'macOS' && inputs.apple-notary-user && inputs.apple-notary-password && inputs.apple-product-id
       uses: lando/notarize-action@v2
       with:
         appstore-connect-username: ${{ inputs.apple-notary-user }}
