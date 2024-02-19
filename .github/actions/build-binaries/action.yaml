@@ -38,7 +38,7 @@ runs:
       run: ${{ inputs.build_command }}
       shell: bash
 
-    - if: ${{ runner.os != 'macOS' }}
+    - if: ${{ runner.os == 'macOS' }}
       name: Sign binary for Mac
       uses: lando/code-sign-action@v2
       with:
