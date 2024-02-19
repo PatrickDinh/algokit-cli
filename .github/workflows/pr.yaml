@@ -18,7 +18,6 @@ jobs:
 
   pr-binaries-build:
     name: Build & Test Binaries
-    needs: pr-check
     uses: ./.github/workflows/build-binaries.yaml
     with:
       production_release: "false"
