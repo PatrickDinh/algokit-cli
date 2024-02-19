@@ -49,15 +49,6 @@ jobs:
           APPLE_CERT_PASSWORD: ${{ secrets.APPLE_CERT_PASSWORD }}
           APPLE_TEAM_ID: 7287T82947
         run: |
-          # Setup
-          SIGNFILE="$(pwd)/$FILE"
-
-          # Throw error if file does not exist
-          if [ ! -f "$SIGNFILE" ]; then
-            echo "$SIGNFILE does not exist!"
-            exit 5
-          fi
-
           # Export certs
           echo "$APPLE_CERT_DATA" | base64 --decode > /tmp/certs.p12
 
