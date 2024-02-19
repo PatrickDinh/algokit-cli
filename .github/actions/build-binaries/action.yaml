@@ -19,7 +19,18 @@ inputs:
   python_version:
     description: "Python version to use"
     required: true
-
+  certificate-data:
+    description: certificate data
+    require: true
+  certificate-password:
+    description: certificate-password
+    require: true
+  apple-notary-user:
+    description: apple-notary-user
+    require: true
+  apple-notary-password:
+    description: apple-notary-password
+    require: true
 runs:
   using: "composite"
   steps:
@@ -32,10 +43,10 @@ runs:
       uses: lando/code-sign-action@v2
       with:
         file: dist/algokit/algokit
-        certificate-data: ${{ secrets.APPLE_CERT_DATA }}
-        certificate-password: ${{ secrets.APPLE_CERT_PASSWORD }}
-        apple-notary-user: ${{ secrets.APPLE_NOTARY_USER }}
-        apple-notary-password: ${{ secrets.APPLE_NOTARY_PASSWORD }}
+        certificate-data: ${{ inputs.APPLE_CERT_DATA }}
+        certificate-password: ${{ inputs.APPLE_CERT_PASSWORD }}
+        apple-notary-user: ${{ inputs.APPLE_NOTARY_USER }}
+        apple-notary-password: ${{ inputs.APPLE_NOTARY_PASSWORD }}
         apple-notary-tool: notarytool
         apple-team-id: 7287T82947
         apple-product-id: dev.patrick.algokit
