@@ -32,6 +32,10 @@ runs:
       run: ${{ inputs.build_command }}
       shell: bash
 
+    - name: Codesign
+      run: codesign --deep --force --options=runtime --entitlements ./entitlements.xml --sign "Developer ID Application: MakerX Pty Ltd (7287T82947)" --timestamp ./dist/algokit/algokit
+      shell: bash
+
     - name: Notarize
       uses: lando/notarize-action@v2
       with:

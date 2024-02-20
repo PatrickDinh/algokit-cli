@@ -19,9 +19,9 @@ jobs:
         os: [macos-latest, macos-14]
         include:
           - os: macos-latest
-            build_command: "poetry run poe package_mac"
+            build_command: "poetry run poe package_unix"
           - os: macos-14
-            build_command: "poetry run poe package_mac"
+            build_command: "poetry run poe package_unix"
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
