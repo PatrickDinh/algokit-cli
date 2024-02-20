@@ -33,7 +33,7 @@ runs:
       shell: bash
 
     - name: Codesign
-      run: codesign --deep --force --options=runtime --entitlements ./entitlements.xml --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/algokit
+      run: codesign --force --options=runtime --entitlements ./entitlements.xml --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/algokit
       shell: bash
 
     - name: Notarize
