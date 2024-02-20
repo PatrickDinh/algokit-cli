@@ -35,8 +35,8 @@ runs:
     - name: Codesign
       run: |
         codesign --force --options=runtime --entitlements ./entitlements.xml --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/algokit
-        codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/Python.framework
-        codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/Python
+        codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/_internal/Python.framework
+        codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/_internal/Python
       shell: bash
 
     - name: Notarize
