@@ -35,6 +35,7 @@ runs:
     - name: Codesign extra
       run: |
         codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/_internal/Python.framework
+        codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/_internal/Python
       shell: bash
 
     - name: Notarize
