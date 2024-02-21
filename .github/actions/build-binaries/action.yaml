@@ -32,6 +32,11 @@ runs:
       run: ${{ inputs.build_command }}
       shell: bash
 
+    - name: Codesign extra
+      run: |
+        codesign --force --sign "5C716D78FBA687E3CE8ADE883997BAA56C7C8520" --timestamp ./dist/algokit/_internal/Python.framework
+      shell: bash
+
     - name: Notarize
       uses: lando/notarize-action@v2
       with:
