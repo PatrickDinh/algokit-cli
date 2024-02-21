@@ -53,6 +53,7 @@ runs:
       uses: BoundfoxStudios/action-xcode-staple@v1
       with:
         product-path: "${{ github.workspace }}/dist/${{ inputs.package_name }}"
+        verbose: true
 
     - name: Set TEST_CLI_PATH
       run: |
