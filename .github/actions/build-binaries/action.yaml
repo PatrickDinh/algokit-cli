@@ -32,9 +32,6 @@ runs:
       run: ${{ inputs.build_command }}
       shell: bash
 
-    - name: Check com.apple.quarantine flag
-      run: xattr -l dist/algokit/_internal/Python
-      shell: bash
     # - name: Notarize
     #   uses: lando/notarize-action@v2
     #   with:
@@ -61,10 +58,6 @@ runs:
     #     git config --global user.email "actions@github.com" && git config --global user.name "github-actions"
     #     poetry run pytest tests/ -m pyinstaller_binary_tests --cli_path "${{ env.TEST_CLI_PATH }}" --log-cli-level=INFO
     #   shell: ${{ inputs.operating_system == 'Windows' && 'cmd' || 'bash' }}
-
-    - name: Check com.apple.quarantine flag
-      run: xattr -l dist/algokit/_internal/Python
-      shell: bash
 
     - name: Set release version
       shell: bash
