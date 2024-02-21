@@ -33,7 +33,7 @@ runs:
       shell: bash
 
     - name: Check com.apple.quarantine flag
-      run: xattr -l _internal/Python
+      run: xattr -l dist/algokit/_internal/Python
       shell: bash
     # - name: Notarize
     #   uses: lando/notarize-action@v2
