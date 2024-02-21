@@ -32,6 +32,9 @@ runs:
       run: ${{ inputs.build_command }}
       shell: bash
 
+    - name: Check com.apple.quarantine flag
+      run: xattr -pr com.apple.quarantine dist/algokit/**
+      shell: bash
     # - name: Notarize
     #   uses: lando/notarize-action@v2
     #   with:
