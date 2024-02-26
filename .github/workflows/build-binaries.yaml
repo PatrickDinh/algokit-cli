@@ -89,7 +89,7 @@ jobs:
           artifacts_dir: ${{ env.ARTIFACTS_DIR }}
           apple_team_id: ${{ secrets.APPLE_TEAM_ID }}
           apple_bundle_id: ${{ inputs.production_release == 'true' && vars.APPLE_BUNDLE_ID || format('beta.{0}', vars.APPLE_BUNDLE_ID) }}
-          apple_cert_id: ${{ secret.APPLE_CERT_ID }}
+          apple_cert_id: ${{ secrets.APPLE_CERT_ID }}
           apple_notary_user: ${{ secrets.APPLE_NOTARY_USER }}
           apple_notary_password: ${{ secrets.APPLE_NOTARY_PASSWORD }}
 
