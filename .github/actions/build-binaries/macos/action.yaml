@@ -38,6 +38,7 @@ runs:
 
     # Workaround an issue with PyInstaller where Python.framework was incorrectly signed during the build
     - name: Codesign python.framework
+      shell: bash
       run: |
         codesign --force --sign "${{ inputs.apple_cert_id }}" --timestamp ${{ inputs.artifacts_dir }}/${{ inputs.package_name }}/_internal/Python.framework
 
