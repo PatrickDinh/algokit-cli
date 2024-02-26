@@ -40,7 +40,7 @@ runs:
     - name: Codesign python.framework
       shell: bash
       run: |
-        codesign --force --sign "${{ inputs.apple_cert_id }}" --timestamp ${{ inputs.artifacts_dir }}/${{ inputs.package_name }}/_internal/Python.framework
+        codesign --force --sign "${{ inputs.apple_cert_id }}" --timestamp "${{ github.workspace }}/dist/algokit/_internal/Python.framework"
 
     - name: Notarize
       uses: lando/notarize-action@v2
@@ -49,7 +49,7 @@ runs:
         appstore-connect-username: ${{ inputs.apple_notary_user }}
         appstore-connect-password: ${{ inputs.apple_notary_password }}
         primary-bundle-id: ${{ inputs.apple_bundle_id }}
-        product-path: "${{ github.workspace }}/dist/${{ inputs.package_name }}"
+        product-path: "${{ github.workspace }}/dist/algokit"
         tool: notarytool
         verbose: true
 
