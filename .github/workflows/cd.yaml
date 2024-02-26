@@ -125,5 +125,5 @@ jobs:
     uses: ./.github/workflows/publish-release-packages.yaml
     with:
       wheelArtifactName: algokit-cli
-      binaryArtifactName: algokit-cli-macos-py3.12
+      binaryArtifactName: algokit-cli-macos
     secrets: inherit
