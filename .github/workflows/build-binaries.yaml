@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # macos-14 is the Apple Silicon M1 runner
-        os: [macos-latest, macos-14]
+        os: [ubuntu-20.04, macos-latest, macos-14]
 
     steps:
       - name: Checkout source code
