@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.0 (2024-02-27)
+
+### Feature
+
+* Breaking change ([`8062881`](https://github.com/PatrickDinh/algokit-cli/commit/8062881254997d8bc1004e30c1e85a5a051397fd))
+
+### Breaking
+
+* breaking change ([`8062881`](https://github.com/PatrickDinh/algokit-cli/commit/8062881254997d8bc1004e30c1e85a5a051397fd))
+
 ## v2.0.9 (2024-02-26)
 
 
